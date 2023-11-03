@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cal.css">
+</head>
+<body>
+    
+    <div class="header" style="border: 3px solid rgb(209, 0, 0);">
+        <div class="first" style="border: 2px solid white;">
+            <h2>Calculation Game</h2>
+        </div>
+        <div class="inpu">
+            <p id="equation"></p>
+            <p id="result"></p>
+            <input type="number" id="userInput">
+            <button class="duyme" onclick="checkAnswer()">Cavabla</button>
+        </div>
+    </div>
+
+<script>
+    let operand1, operand2, operator, correctAnswer;
+
+function generateEquation() {
+  operand1 = Math.floor(Math.random() * 10) + 1; // 1-10 arası rastgele bir sayı seçilir
+  operand2 = Math.floor(Math.random() * 10) + 1;
+  const operators = ["+", "-", "*", "/"];
+  operator = operators[Math.floor(Math.random() * operators.length)];
+
+  let equation = `${operand1} ${operator} ${operand2}`;
+  document.getElementById("equation").innerText = equation;
+
+  switch (operator) {
+    case "+":
+      correctAnswer = operand1 + operand2;
+      break;
+    case "-":
+      correctAnswer = operand1 - operand2;
+      break;
+    case "*":
+      correctAnswer = operand1 * operand2;
+      break;
+    case "/":
+      correctAnswer = operand1 / operand2;
+      break;
+  }
+}
+
+function checkAnswer() {
+  const userInput = parseFloat(document.getElementById("userInput").value);
+  const resultElement = document.getElementById("result");
+
+  if (userInput === correctAnswer) {
+    resultElement.innerText = "halaldi";
+  } else {
+    resultElement.innerText = "Sehvdi dostum";
+  }
+
+  generateEquation();
+}
+
+window.onload = generateEquation;
+</script>
+</body>
+</html>

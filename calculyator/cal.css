@@ -1,0 +1,50 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: rgb(83, 0, 0);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.header{
+    width: 330px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.first{
+    width: 300px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+h2{
+    color: white;
+}
+.inpu{
+    width: 280px;
+    height: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.duyme{
+    background-color: darkgreen;
+    width: 90px;
+    height: 30px;
+    color: white;
+}
+input{
+    height: 30px;
+    width: 90px;
+}
+p{
+    color: white;
+}

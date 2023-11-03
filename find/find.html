@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="find.css">
+</head>
+<body>
+    <div class="head">         
+        <input id="numInput" class="qutu" type="text">            
+        <button onclick="separateNumbers();" class="men">Find</button>
+        <button class="sen" onclick="resetNumbers()">Reset</button>
+        <div id="oddNumbers"></div>
+        <div id="evenNumbers"></div>
+    </div>
+
+
+
+<script>
+
+   
+function separateNumbers() {
+  // Kullanıcının girdiği sayıyı almak
+  const input = document.getElementById("numInput").value;
+
+  // Çift ve tek rakamları ayrı ayrı tutmak için boş dizi oluşturmak
+  const oddNumbers = [];
+  const evenNumbers = [];
+
+  // Girdi üzerinde döngü ile rakamları kontrol etmek
+  for (let i = 0; i < input.length; i++) {
+    const digit = parseInt(input[i]);
+  
+    if (digit % 2 === 0) {
+      evenNumbers.push(digit);
+    } else {
+      oddNumbers.push(digit);
+    }
+  }
+
+  // Sonuçları ekrana yazdırmak
+  const oddNumbersElement = document.getElementById("oddNumbers");
+  const evenNumbersElement = document.getElementById("evenNumbers");
+  
+  oddNumbersElement.innerText = ` ${oddNumbers.join(", ")}`;
+  evenNumbersElement.innerText = ` ${evenNumbers.join(", ")}`;
+}
+
+  function resetNumbers() {
+    oddNumbers = [];
+    evenNumbers = [];
+
+    // Ekrandaki sonuçları temizlemek
+  const oddNumbersElement = document.getElementById("oddNumbers");
+  const evenNumbersElement = document.getElementById("evenNumbers");
+
+  oddNumbersElement.innerText = "";
+  evenNumbersElement.innerText = "";
+
+  } 
+
+
+
+
+
+
+
+    
+</script>    
+</body>
+</html>

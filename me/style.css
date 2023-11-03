@@ -1,0 +1,34 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.head{
+    display: flex;
+    height: 100vh;
+}
+.first{
+    background-color: green;
+    width: 40%;
+}
+.second{
+    background-color: darkgreen;
+    width: 60%;
+}
+.first{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.sekil{
+    width: 500px;
+    height: 500px;      
+    position: relative;
+    left: 49%;
+    bottom: 0;
+    display: block;
+}
+img{
+    display: block;
+}
+

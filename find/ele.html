@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+  <input type="number" id="userInput">
+  <button onclick="checkAnswer()">Kontrol Et</button>
+  <p id="equation"></p>
+  <p id="result"></p>
+
+
+<script>
+
+let operand1, operand2, operator, correctAnswer;
+
+function generateEquation() {
+  operand1 = Math.floor(Math.random() * 10) + 1; // 1-10 arası rastgele bir sayı seçilir
+  operand2 = Math.floor(Math.random() * 10) + 1;
+  const operators = ["+", "-", "*", "/"];
+  operator = operators[Math.floor(Math.random() * operators.length)];
+
+  let equation = `${operand1} ${operator} ${operand2}`;
+  document.getElementById("equation").innerText = equation;
+
+  switch (operator) {
+    case "+":
+      correctAnswer = operand1 + operand2;
+      break;
+    case "-":
+      correctAnswer = operand1 - operand2;
+      break;
+    case "*":
+      correctAnswer = operand1 * operand2;
+      break;
+    case "/":
+      correctAnswer = operand1 / operand2;
+      break;
+  }
+}
+
+function checkAnswer() {
+  const userInput = parseFloat(document.getElementById("userInput").value);
+  const resultElement = document.getElementById("result");
+
+  if (userInput === correctAnswer) {
+    resultElement.innerText = "Doğru!";
+  } else {
+    resultElement.innerText = "Yanlış! Tekrar deneyin.";
+  }
+
+  generateEquation();
+}
+
+window.onload = generateEquation;
+
+</script>    
+</body>
+</html>
